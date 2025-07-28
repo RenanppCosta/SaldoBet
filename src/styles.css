@@ -17,8 +17,16 @@
   --color-text-md: #64748B;
   --color-text-green: #34D399;
   --color-text-red: #f87171;
+  --border-components: rgb(51,65,85);
 }
 
 body{
     background-color: var(--bg-global);
+}
+
+main{
+    max-width: 1268px;
+    margin: 0 auto;
+    left: 0;
+    padding: 0 16px;
 }

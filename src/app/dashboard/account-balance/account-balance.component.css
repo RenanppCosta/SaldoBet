@@ -1,0 +1,28 @@
+.account-balance-card{
+    background-color: var(--bg-components);
+    border-radius: 8px;
+    border: 1px solid var(--border-components);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+    padding: 24px;
+    max-width: 1268px;
+    margin: 0 auto;
+    left: 0;
+}
+
+.text-balance{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--color-text-lg);
+}
+
+.text-balance-value{
+    color: var(--color-text-green);
+    font-size: 40px;
+    font-weight: 700;
+}
