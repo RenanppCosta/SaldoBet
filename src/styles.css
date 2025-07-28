@@ -12,12 +12,13 @@
   --bg-global: #0f172a;
   --bg-components: #1E293B80;
   --bg-info-components: #3341554D;
-  --bg-button: #334145;
+  --bg-button: #585f61;
   --color-text-lg: #94A3B8;
   --color-text-md: #64748B;
   --color-text-green: #34D399;
   --color-text-red: #f87171;
   --border-components: rgb(51,65,85);
+  --border-button: rgb(71,85,105);
 }
 
 body{

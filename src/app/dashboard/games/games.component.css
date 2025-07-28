@@ -1,0 +1,30 @@
+.container-my-games{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 24px;
+    background-color: var(--bg-components);
+    border-radius: 8px;
+    border: 1px solid var(--border-components);
+    flex: 1;
+}
+
+.container-my-games h2{
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-list-games{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.container-button{
+    margin-top: 12px;
+    width: 100%;
+}

@@ -1,0 +1,55 @@
+.container-game{
+    background-color: var(--bg-info-components);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 10px;
+    width: 100%;
+}
+
+.info-container-game{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.info-game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+}
+
+.name-game{
+    color: #FFF;
+}
+
+.quantity-bets-game{
+    font-size: 12px;
+    color: var(--color-text-lg);
+}
+
+.balance-game{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 6px;
+}
+
+.balance{
+    font-size: 14px;
+    color: var(--color-text-lg);
+}
+
+.balance-value{
+    color: var(--color-text-green);
+    font-weight: 500;
+}
+
+.balance-wr{
+    color: var(--color-text-green);
+    font-size: 12px;
+}
+

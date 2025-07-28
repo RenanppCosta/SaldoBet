@@ -1,0 +1,13 @@
+.container-history{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 6px;
+}
+
+.container-history > app-bets-history,
+.container-history > app-games {
+    flex: 1;
+    display: flex; 
+}
