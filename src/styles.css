@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "GeistSans";
+}
+
+
+:root {
+  --bg-global: #0f172a;
+  --bg-components: #1E293B80;
+  --bg-info-components: #3341554D;
+  --bg-button: #334145;
+  --color-text-lg: #94A3B8;
+  --color-text-md: #64748B;
+  --color-text-green: #34D399;
+  --color-text-red: #f87171;
+}
