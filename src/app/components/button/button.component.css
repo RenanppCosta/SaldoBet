@@ -14,11 +14,15 @@ button{
     transition: all 0.3s ease;
 }
 
+.fa-solid{
+    transition: all 0.3s ease;
+}
+
 button:hover{
     background-color: var(--border-button);
     color: #000;
 }
 
-button:hover i{
-    color: #000;
+button:hover .fa-solid{
+    color: #000 !important;
 }
