@@ -1,0 +1,36 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    left: 0;
+    padding: 16px;
+    max-width: 1268px;
+}
+
+
+.container-title{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.container-title h1{
+    color: #FFF;
+}
+
+.container-welcome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.text-welcome{
+    color: var(--color-text-lg);
+}
+
+.text-bets-today{
+    color: var(--color-text-md);
+    font-size: 14px;
+}

@@ -1,9 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "GeistSans";
+  font-family: "Work Sans", sans-serif;
 }
 
 
@@ -16,4 +17,8 @@
   --color-text-md: #64748B;
   --color-text-green: #34D399;
   --color-text-red: #f87171;
+}
+
+body{
+    background-color: var(--bg-global);
 }
