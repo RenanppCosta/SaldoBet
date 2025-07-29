@@ -1,7 +1,7 @@
 <div class="container-bet">
     <div class="info-bet">
         <span class="description-bet">{{bet().description}}</span>
-        <span class="balance-bet" [ngClass]="colorTextProfit()">{{profit()}}</span>
+        <span class="balance-bet" [ngClass]="colorTextProfit()">{{profit() | currency: 'BRL'}}</span>
     </div>
 
     <div class="info-game-bet">

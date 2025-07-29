@@ -1,10 +1,10 @@
 import { Component, computed, input } from '@angular/core';
 import { Bet, PossibleResult } from '../../models/bet.model';
-import { DatePipe, NgClass } from '@angular/common';
+import { CurrencyPipe, DatePipe, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-bet',
-  imports: [DatePipe, NgClass],
+  imports: [DatePipe, NgClass, CurrencyPipe],
   templateUrl: './bet.component.html',
   styleUrl: './bet.component.css'
 })
