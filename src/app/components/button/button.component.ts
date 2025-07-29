@@ -7,5 +7,4 @@ import { Component, input } from '@angular/core';
   styleUrl: './button.component.css'
 })
 export class ButtonComponent {
-  text = input.required<string>();
 }
