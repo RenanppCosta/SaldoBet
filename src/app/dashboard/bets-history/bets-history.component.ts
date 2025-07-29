@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { BetComponent } from './bet/bet.component';
 import { ButtonComponent } from '../../components/button/button.component';
+import { Bet } from '../models/bet.model';
 
 @Component({
   selector: 'app-bets-history',
@@ -9,5 +10,5 @@ import { ButtonComponent } from '../../components/button/button.component';
   styleUrl: './bets-history.component.css'
 })
 export class BetsHistoryComponent {
-
+  bets = input.required<Bet[]>();
 }

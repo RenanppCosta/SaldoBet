@@ -1,11 +1,11 @@
 <div class="container-bet">
     <div class="info-bet">
-        <span class="description-bet">ML paiN - paiN x LOUD</span>
-        <span class="balance-bet">R$150,00</span>
+        <span class="description-bet">{{bet().description}}</span>
+        <span class="balance-bet" [ngClass]="colorTextProfit()">{{profit()}}</span>
     </div>
 
     <div class="info-game-bet">
-        <span class="date-bet">05/01/2025</span>
-        <span class="game-bet">LoL</span>
+        <span class="date-bet" >{{bet().date | date: 'dd/MM/yyyy'}}</span>
+        <span class="game-bet">{{bet().game.name}}</span>
     </div>
 </div>

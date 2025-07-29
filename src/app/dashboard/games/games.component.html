@@ -4,7 +4,10 @@
         Meus jogos
     </h2>
     <div class="container-list-games">
-        <app-game></app-game>
+        @for(game of games(); track game){
+            <app-game [game]="game"></app-game>
+        }
+        
     </div>
     <div class="container-button">
         <app-button text="Adicionar jogo"></app-button>

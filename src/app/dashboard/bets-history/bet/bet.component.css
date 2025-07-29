@@ -20,7 +20,6 @@
 
 .balance-bet{
     font-size: 14px;
-    color: var(--color-text-red);
 }
 
 .info-game-bet{
@@ -35,4 +34,12 @@
 
 .game-bet{
     color: var(--color-text-md);
+}
+
+.profit-red{
+    color: var(--color-text-red);
+}
+
+.profit-green{
+    color: var(--color-text-green);
 }

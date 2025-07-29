@@ -1,6 +1,6 @@
 <div style="padding: 16px 0;">
     <div class="account-balance-card">
         <span class="text-balance"><i class="fa-solid fa-bullseye" style="color: var(--color-text-lg);"></i> Saldo disponível:</span>
-        <span class="text-balance-value">R$1250,00</span>
+        <span class="text-balance-value">{{ balance() | currency: 'BRL' }}</span>
     </div>
 </div>

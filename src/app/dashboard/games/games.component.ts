@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { GameComponent } from './game/game.component';
 import { ButtonComponent } from '../../components/button/button.component';
+import { Game } from '../models/game.model';
 
 @Component({
   selector: 'app-games',
@@ -9,5 +10,5 @@ import { ButtonComponent } from '../../components/button/button.component';
   styleUrl: './games.component.css'
 })
 export class GamesComponent {
-
+  games = input.required<Game[]>();
 }

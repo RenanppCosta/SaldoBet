@@ -4,7 +4,9 @@
         Histórico de Apostas
     </h2>
     <div class="container-list-bets">
-        <app-bet></app-bet>
+        @for(bet of bets(); track bet.id){
+            <app-bet [bet]="bet"></app-bet>
+        }
     </div>
     <div class="container-button">
         <app-button text="Adicionar aposta"></app-button>
