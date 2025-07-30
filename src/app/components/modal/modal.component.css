@@ -16,3 +16,9 @@
     opacity: 0.5;
     background-color: var(--bg-button);
 }
+
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
