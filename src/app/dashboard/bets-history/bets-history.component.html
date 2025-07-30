@@ -9,9 +9,12 @@
         }
     </div>
     <div class="container-button">
-        <app-button>
+        <app-button (click)="openModal()">
             <span style="font-size: 24px;">+</span>
             Adicionar aposta
         </app-button>
     </div>   
 </div>
+
+
+<app-modal [open]="openedModal()"></app-modal>

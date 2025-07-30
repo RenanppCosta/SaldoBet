@@ -1,0 +1,18 @@
+.modal{
+    background-color: var(--bg-global);
+    border: 1px solid var(--border-components);
+    border-radius: 8px;
+    padding: 16px;
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    
+}
+
+.modal::backdrop{
+    opacity: 0.5;
+    background-color: var(--bg-button);
+}
