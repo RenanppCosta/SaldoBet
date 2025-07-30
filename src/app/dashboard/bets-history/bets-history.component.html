@@ -17,4 +17,55 @@
 </div>
 
 
-<app-modal [(open)]="openedModal"></app-modal>
+<app-modal [(open)]="openedModal">
+    <ng-container title-modal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up h-5 w-5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+        <h2>Adicionar Aposta</h2>
+    </ng-container>
+
+    <form class="form" (ngSubmit)="onSubmit()" ngNativeValidate>
+        <label class="label-group">
+            Descrição da Aposta
+            <input [(ngModel)]="newBetForm.description" class="input" type="text" name="description-bet">
+        </label>
+
+        <fieldset class="group-result-bet" required>
+            <legend class="legend">Resultado da Aposta</legend>
+
+            <label class="label-group-radio">
+                <input type="radio" [(ngModel)]="newBetForm.result" value="Win" name="possible-result" required>
+                Win
+            </label>
+
+            <label class="label-group-radio">
+                <input type="radio" [(ngModel)]="newBetForm.result" value="Lose" name="possible-result" required>
+                Lose
+            </label>
+        </fieldset>
+
+        <label class="label-group">
+            Lucro/Perda
+            <input [(ngModel)]="newBetForm.profit" class="input" type="number" name="value-profit" min="0.01" step="0.01" placeholder="R$ 500,00" required>
+        </label>
+
+        <label class="label-group">
+            Data da aposta
+            <input [(ngModel)]="newBetForm.date" class="input" type="date" name="date-bet" required>
+        </label>
+
+        <label class="label-group">
+            Jogo
+            <select [(ngModel)]="newBetForm.gameName" name="game-bet" class="input select-game-bet" required>
+                <option value="" selected disabled>Selecione o jogo</option>
+
+                <option value="LoL">LoL</option>
+                <option value="CS">CS</option>
+                <option value="Valorant">Valorant</option>
+            </select>
+        </label>
+
+        <app-button>
+            Adicionar Aposta
+        </app-button>
+    </form>
+</app-modal>

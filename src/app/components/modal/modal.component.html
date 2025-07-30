@@ -1,6 +1,17 @@
-<dialog class="modal" #modal>
-    <button (click)="closeModal()">
-        <i class="fa-solid fa-xmark fa-xl" style="color: #fff;"></i>
-    </button>
-    <ng-content />
+<dialog class="modal" #modal (close)="closeModal()">
+    
+    <div class="modal-content">
+        <div class="header-modal">
+            <div class="title-modal">
+                 <ng-content select="[title-modal]" >
+                Titulo Padrão
+                </ng-content>
+            </div>
+           
+            <button (click)="closeModal()">
+                <i class="fa-solid fa-xmark fa-xl" style="color: #fff;"></i>
+            </button>
+        </div>
+        <ng-content />
+    </div>
 </dialog>

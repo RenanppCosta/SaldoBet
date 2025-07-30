@@ -2,14 +2,15 @@
     background-color: var(--bg-global);
     border: 1px solid var(--border-components);
     border-radius: 8px;
-    padding: 16px;
+    padding: 24px 32px;
 
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    
+    width: calc(100% - 2rem);
+    max-width: 678px;
 }
 
 .modal::backdrop{
@@ -17,8 +18,28 @@
     background-color: var(--bg-button);
 }
 
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
 button{
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+.header-modal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }

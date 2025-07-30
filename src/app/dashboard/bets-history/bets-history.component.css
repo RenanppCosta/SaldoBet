@@ -28,3 +28,53 @@
     margin-top: 12px;
     width: 100%;
 }
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.label-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+  padding: 8px 16px;
+
+  border-radius: 8px;
+  border: 0;
+  background: var(--bg-components);
+  color: #FFF;
+}
+
+.group-result-bet {
+  border: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend {
+  margin-bottom: 8px;
+}
+
+.label-group-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.select-game-bet {
+  appearance: none;
+}
+
+.select-game-bet option{
+    background-color: var(--border-components);
+}
