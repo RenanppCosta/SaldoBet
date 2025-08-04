@@ -57,10 +57,9 @@
             Jogo
             <select [(ngModel)]="newBetForm.gameName" name="game-bet" class="input select-game-bet" required>
                 <option value="" selected disabled>Selecione o jogo</option>
-
-                <option value="LoL">LoL</option>
-                <option value="CS">CS</option>
-                <option value="Valorant">Valorant</option>
+                @for(game of games(); track game.name){
+                     <option [value]="game.name">{{game.name}}</option>
+                }
             </select>
         </label>
 
