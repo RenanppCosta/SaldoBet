@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { BetComponent } from './bet/bet.component';
 import { ButtonComponent } from '../../components/button/button.component';
 import { Bet, PossibleResult } from '../models/bet.model';
@@ -16,6 +16,7 @@ export class BetsHistoryComponent {
   bets = input.required<Bet[]>();
   games = input.required<Game[]>();
 
+  createdBet = output<Bet>();
 
   newBetForm = {
     description: "",
@@ -40,7 +41,8 @@ export class BetsHistoryComponent {
       selectedGame
     )
 
-    console.log(newBet);
+    this.createdBet.emit(newBet);
+    this.openedModal.set(false);
   }
 
   openedModal = signal(false);

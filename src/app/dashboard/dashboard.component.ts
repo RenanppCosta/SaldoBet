@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, signal, WritableSignal } from '@angular/core';
 import { AccountBalanceComponent } from './account-balance/account-balance.component';
 import { BetsHistoryComponent } from './bets-history/bets-history.component';
 import { GamesComponent } from './games/games.component';
@@ -11,11 +11,11 @@ import { Bet, PossibleResult } from './models/bet.model';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
-  balance: number = 0;
-  games: Game[] = [];
-  allBets: Bet[] = [];
+  balance: WritableSignal<number> = signal(0);
+  games: WritableSignal<Game[]> = signal([]);
+  allBets: WritableSignal<Bet[]> = signal([]);
 
   ngOnInit() {
     const lolGame: Game = {
@@ -25,7 +25,7 @@ export class DashboardComponent {
     };
 
     const csgoGame: Game = {
-      name: 'CS:GO',
+      name: 'CS',
       profit: 140, 
       bets: []
     };
@@ -95,7 +95,24 @@ export class DashboardComponent {
     lolGame.bets = lolBets;
     csgoGame.bets = csgoBets;
 
-    this.games = [lolGame, csgoGame];
-    this.allBets = [...lolBets, ...csgoBets].sort((a, b) => b.date.getTime() - a.date.getTime());
+    const initialGames = [lolGame, csgoGame];
+    const initialBets = [...lolBets, ...csgoBets].sort((a, b) => b.date.getTime() - a.date.getTime());
+
+    this.games.set(initialGames);
+    this.allBets.set(initialBets);
+  }
+
+  handleNewBet(newBet: Bet) {
+    this.allBets.update(currentBets => [newBet, ...currentBets]);
+
+    this.games.update(currentGames => {
+      const gameToUpdate = currentGames.find(game => game.name === newBet.game.name);
+
+      if (gameToUpdate) {
+        gameToUpdate.bets = [newBet, ...gameToUpdate.bets];
+      }
+      
+      return [...currentGames];
+    });
   }
 }
