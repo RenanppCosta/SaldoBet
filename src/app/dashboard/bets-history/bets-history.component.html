@@ -6,6 +6,8 @@
     <div class="container-list-bets">
         @for(bet of bets(); track bet.id){
             <app-bet [bet]="bet"></app-bet>
+        }@empty {
+            <span style="color: #fff; margin: 16px 0;">Ainda não há apostas cadastradas</span>
         }
     </div>
     <div class="container-button">

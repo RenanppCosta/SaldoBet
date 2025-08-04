@@ -6,6 +6,8 @@
     <div class="container-list-games">
         @for(game of games(); track game){
             <app-game [game]="game"></app-game>
+        } @empty {
+            <span style="color: #fff; margin: 16px 0;">Ainda não há Jogos cadastrados</span>
         }
         
     </div>
@@ -27,11 +29,6 @@
         <label class="label-group">
             Nome do Jogo
             <input [(ngModel)]="newGameForm.name" class="input" type="text" name="name-game">
-        </label>
-
-        <label class="label-group">
-            Lucro/Perda
-            <input [(ngModel)]="newGameForm.profit" class="input" type="number" name="value-profit" min="0.01" step="0.01" placeholder="R$ 500,00" required>
         </label>
 
         <app-button>

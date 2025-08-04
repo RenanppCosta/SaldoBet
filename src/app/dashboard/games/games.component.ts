@@ -17,13 +17,12 @@ export class GamesComponent {
 
   newGameForm = {
     name: "",
-    profit: "",
   }
 
   onSubmit(){
     const newGame = new Game(
       this.newGameForm.name,
-      Number(this.newGameForm.profit)
+      0
     )
 
     this.createdGame.emit(newGame);
