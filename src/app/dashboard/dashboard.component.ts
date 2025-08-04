@@ -12,10 +12,12 @@ import { Bet, PossibleResult } from './models/bet.model';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent  {
-
-  balance = 0;
   initialGames = signal<Game[]>([]);
   bets = signal<Bet[]>([]);
+
+  balance = computed(() => {
+    return this.games().reduce((acc, game) => acc + game.profit, 0);
+  });
 
   games = computed(() =>{
     return this.initialGames().map((game) =>{
