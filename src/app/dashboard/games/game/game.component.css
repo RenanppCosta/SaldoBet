@@ -44,7 +44,6 @@
 }
 
 .balance-value{
-    color: var(--color-text-green);
     font-weight: 500;
 }
 
@@ -53,3 +52,10 @@
     font-size: 12px;
 }
 
+.profit-red{
+    color: var(--color-text-red);
+}
+
+.profit-green{
+    color: var(--color-text-green);
+}

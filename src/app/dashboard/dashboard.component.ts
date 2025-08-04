@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, WritableSignal } from '@angular/core';
+import { Component, computed, OnInit, signal, WritableSignal } from '@angular/core';
 import { AccountBalanceComponent } from './account-balance/account-balance.component';
 import { BetsHistoryComponent } from './bets-history/bets-history.component';
 import { GamesComponent } from './games/games.component';
@@ -14,13 +14,39 @@ import { Bet, PossibleResult } from './models/bet.model';
 export class DashboardComponent  {
 
   balance = 0;
-  games = signal<Game[]>([]);
-  allBets = signal<Bet[]>([]);
+  initialGames = signal<Game[]>([]);
+  bets = signal<Bet[]>([]);
+
+  games = computed(() =>{
+    return this.initialGames().map((game) =>{
+      const profit = this.calculateProfit(game);
+
+      return {...game, profit: profit}
+    })
+  })
+
+   calculateProfit(game: Game){
+    const betsOfGame = this.bets().filter((bet) =>{
+      return game.name == bet.game.name;
+    })
+
+    const newProfit = betsOfGame.reduce((acc, bet) =>{
+      if(bet.result == PossibleResult.WIN){
+        return acc + bet.profit
+      }else if(bet.result == PossibleResult.LOSE){
+        return acc - bet.profit
+      }
+
+      return acc; 
+    }, game.profit);
+
+    return newProfit;
+  }
 
   handleNewBet(newBet: Bet) {
-    this.allBets.update(currentBets => [newBet, ...currentBets]);
+    this.bets.update(currentBets => [newBet, ...currentBets]);
 
-    this.games.update(currentGames => {
+    this.initialGames.update(currentGames => {
       const gameToUpdate = currentGames.find(game => game.name === newBet.game.name);
 
       if (gameToUpdate) {
@@ -32,6 +58,6 @@ export class DashboardComponent  {
   }
 
   handleNewGame(newGame: Game){
-    this.games.update(currenteGames => [newGame, ...currenteGames])
+    this.initialGames.update(currentGames => [newGame, ...currentGames])
   }
 }
