@@ -4,6 +4,10 @@ export class Game {
     constructor(
         public readonly name: string,
         public readonly profit: number,
-        public bets: Bet[]
-    ){}
+        public bets?: Bet[]
+    ){
+        if (!this.bets) {
+            this.bets = [];
+        }
+    }
 }

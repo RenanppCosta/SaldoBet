@@ -2,6 +2,6 @@
     <app-account-balance [balance]="balance()"></app-account-balance>
     <div class="container-history">
         <app-bets-history [bets]="allBets()" [games]="games()" (createdBet)="handleNewBet($event)"></app-bets-history>
-        <app-games [games]="games()"></app-games>
+        <app-games [games]="games()" (createdGame)="handleNewGame($event)"></app-games>
     </div>
 </section>

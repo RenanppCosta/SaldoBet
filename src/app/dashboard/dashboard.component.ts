@@ -109,10 +109,14 @@ export class DashboardComponent implements OnInit {
       const gameToUpdate = currentGames.find(game => game.name === newBet.game.name);
 
       if (gameToUpdate) {
-        gameToUpdate.bets = [newBet, ...gameToUpdate.bets];
+        gameToUpdate.bets = [newBet, ...(gameToUpdate.bets ?? [])];
       }
       
       return [...currentGames];
     });
+  }
+
+  handleNewGame(newGame: Game){
+    this.games.update(currenteGames => [newGame, ...currenteGames])
   }
 }
