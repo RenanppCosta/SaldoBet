@@ -10,6 +10,6 @@
     <div class="balance-game">
         <span class="balance">Lucro</span>
         <span class="balance-value" [ngClass]="colorTextProfit()">{{game().profit | currency: 'BRL'}}</span>
-        <span class="balance-wr">64% win rate</span>
+        <span class="balance-wr">{{ winRate() | percent:'1.2-2' }}</span>
     </div>
 </div>
